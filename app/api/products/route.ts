@@ -1,10 +1,13 @@
 import { NextRequest } from 'next/server';
 import { PrismaClient } from '@prisma/client';
 import { successResponse, handleApiError } from '@/lib/api-response';
+import { cleanupExpiredReservations }
+from "@/lib/cleanupExpiredReservations";
 
 const prisma = new PrismaClient();
 
 export async function GET(request: NextRequest) {
+  await cleanupExpiredReservations();
   try {
     const products = await prisma.product.findMany({
       include: {
