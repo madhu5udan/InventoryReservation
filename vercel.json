@@ -1,11 +1,5 @@
 {
   "buildCommand": "npm run build",
   "devCommand": "npm run dev",
-  "installCommand": "npm install",
-  "crons": [
-    {
-      "path": "/api/cron/expire-reservations",
-      "schedule": "*/5 * * * *"
-    }
-  ]
+  "installCommand": "npm install"
 }
