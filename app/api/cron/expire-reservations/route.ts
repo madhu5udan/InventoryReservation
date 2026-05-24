@@ -15,16 +15,7 @@ import { handleExpiredReservations } from '@/lib/reservation';
  * - External service like EasyCron or AWS EventBridge
  * - Database trigger with background job
  * 
- * Vercel cron config in vercel.json:
- * {
- *   "crons": [
- *     {
- *       "path": "/api/cron/expire-reservations",
- *       "schedule": "*/5 * * * *"
- *     }
- *   ]
- * }
- */
+ 
 
 export async function POST(request: NextRequest) {
   try {
